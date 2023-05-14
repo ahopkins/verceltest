@@ -3,6 +3,6 @@ from sanic import Request, Sanic, json
 app = Sanic("TestApp")
 
 
-@app.get("/")
-async def handler(request: Request):
+@app.get("/<path:path>")
+async def handler(request: Request, path):
     return json({"foo": "bar"})
